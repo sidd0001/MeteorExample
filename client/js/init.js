@@ -1,6 +1,6 @@
 Meteor.startup(function() {
   Uploader.finished = function(index, fileInfo, templateContext) {
-	  ImagesList.insert({
+	  ImageList.insert({
 		name: fileInfo.name,
 		createdAt: new Date()
 	  })
