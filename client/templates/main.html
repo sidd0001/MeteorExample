@@ -1,0 +1,45 @@
+<head>
+</head>
+
+<body>
+</body>
+
+<template name="Root">
+  {{> Navigation}}
+
+  Main Page 
+  <br/>
+  
+  Data Title: {{title}}
+
+</template>
+
+<template name="Page1">
+  {{> Navigation}}
+
+  <h2>Page1</h2>
+</template>
+
+<template name="Page2">
+  {{> Navigation}}
+
+  <h2>Page2</h2>
+</template>
+
+<template name="Navigation">
+  <ul>
+    <li>
+      <a href="/">Root</a>
+    </li>
+	{{#unless page1}}
+    <li>
+      <a href="/page1">Page1</a>
+    </li>
+	{{/unless}}
+	{{#unless page2}}
+    <li>
+      <a href="/page2">Page2</a>
+    </li>
+	{{/unless}}
+  </ul>
+</template>
