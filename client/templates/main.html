@@ -1,45 +1,55 @@
 <head>
+ <title>MeteorApp Example</title>
 </head>
 
 <body>
+
 </body>
 
 <template name="Root">
   {{> Navigation}}
 
-  Main Page 
-  <br/>
+  <h4><span class="label label-default">Main Page</span></h4>
+
   
-  Data Title: {{title}}
+  {{title}}
 
 </template>
 
 <template name="Page1">
   {{> Navigation}}
 
-  <h2>Page1</h2>
+  <h4><span class="label label-default">Page1</span></h4>
 </template>
 
 <template name="Page2">
   {{> Navigation}}
 
-  <h2>Page2</h2>
+  <h4><span class="label label-default">Page2</span></h4>
 </template>
 
 <template name="Navigation">
-  <ul>
-    <li>
-      <a href="/">Root</a>
-    </li>
-	{{#unless page1}}
-    <li>
-      <a href="/page1">Page1</a>
-    </li>
-	{{/unless}}
-	{{#unless page2}}
-    <li>
-      <a href="/page2">Page2</a>
-    </li>
-	{{/unless}}
-  </ul>
+<div class="container">
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+		<li>
+		  <a href="/">Root</a>
+		</li>
+		{{#unless page1}}
+		<li>
+		  <a href="/page1">Page1</a>
+		</li>
+		{{/unless}}
+		{{#unless page2}}
+		<li>
+		  <a href="/page2">Page2</a>
+		</li>
+		{{/unless}}
+	  </ul>
+    </div>
+	</div>
+	</nav>
+</div>
 </template>

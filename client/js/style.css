@@ -1,0 +1,13 @@
+.navbar-default .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+}
+	
+.navbar-default {
+    background-color: #9CE1F9;
+    border-color: #E02D78;
+}
+
+
+
+
+  
