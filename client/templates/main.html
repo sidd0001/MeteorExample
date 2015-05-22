@@ -5,77 +5,88 @@
 <body>
 
 </body>
-
 <template name="Root">
   {{> Navigation}}
-
   <h4><span class="label label-default">Main Page</span></h4>
-
-  
   {{title}}
-  
   <div class="container">
-  
   </div>
-
 </template>
-
 <template name="Page1">
   {{> Navigation}}
-
   <h4><span class="label label-default">Page1</span></h4>
-  
-  {{> loginButtons}}
-  
-  {{#if currentUser}}
-  <h3>Images</h3>
-  <div class="row-fluid">
-    <div class="col-lg-12 col-md-10 ">
-        <div class="cover-container">
-  {{#each images}}
-    <div class="cover-item" style="background-image: url('.uploads/{{name}}')"></div>
-  {{/each}}
-          </div>
-    </div>
-</div>
-  {{> customUpload}}
-  {{/if}}
-  
+    {{> customUpload}}
 </template>
 
 <template name="customUpload">
-	<h3>Upload Image</h3>
-    {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
+
+    <div class="col-md-offset-3 col-md-6">
+        <h3>Upload Image</h3>
+        <hr>
+        <h4>Image Name</h4>
+            <input id="ImgName" type="text" style="height: 40px; width: 100%" placeholder="Enter Image Name" >
+        <h4>Hash Tags</h4>
+        <input id="hashTags" type="text" style="height: 40px ; width: 100%" placeholder="Enter hash text" >
+        <h4>Images</h4>
+        {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
+
+    </div>
+
 </template>
 
 <template name="Page2">
   {{> Navigation}}
-
   <h4><span class="label label-default">Page2</span></h4>
+    <div class="container">
+    {{#if currentUser}}
+        <hr>
+        <div class="ui action input">
+            <input id="textSearch" type="text" placeholder="Search...">
+            <button id="search" class="ui button">Search</button>
+        </div>
+        <hr>
+        <h3>Images</h3>
+        <div class="row-fluid">
+            <div class="col-lg-12 col-md-10 ">
+                <div class="cover-container">
+                    {{#each images}}
+                        <div class="cover-item">
+                            Name : {{name}}<br>
+                            HashTag : {{#each hashTag}} {{this}} {{/each}}
+                            <br>
+                                <a href="/.uploads/{{imgName}}"><img src=".uploads/{{imgName}}" style="height: 110px"></a><br>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    </div>
 </template>
 
 <template name="Navigation">
 <div class="container">
-	<nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <ul class="nav navbar-nav">
-		<li>
-		  <a href="/">Root</a>
-		</li>
-		{{#unless page1}}
-		<li>
-		  <a href="/page1">Page1</a>
-		</li>
-		{{/unless}}
-		{{#unless page2}}
-		<li>
-		  <a href="/page2">Page2</a>
-		</li>
-		{{/unless}}
-	  </ul>
+
+    <div class="ui massive pointing menu" >
+        <a class="item" href="/">
+            <i class="home icon"></i>Root
+        </a>
+
+        {{#unless page1}}
+        <a class="item" href="/page1">
+            Page1
+        </a>
+        {{/unless}}
+        {{#unless page2}}
+        <a class="item" href="/page2">
+                Page2
+        </a>
+        {{/unless}}
+        <div class="right menu">
+            <div class="item">
+                {{> loginButtons}}
+            </div>
+        </div>
     </div>
-	</div>
-	</nav>
 </div>
 </template>
