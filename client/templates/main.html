@@ -15,7 +15,9 @@
 <template name="Page1">
   {{> Navigation}}
   <h4><span class="label label-default">Page1</span></h4>
+  {{#if currentUser}}
     {{> customUpload}}
+  {{/if}}
 </template>
 
 <template name="customUpload">
