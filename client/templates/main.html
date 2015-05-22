@@ -29,12 +29,22 @@
   
   {{#if currentUser}}
   <h3>Images</h3>
+  <div class="row-fluid">
+    <div class="col-lg-12 col-md-10 ">
+        <div class="cover-container">
+  {{#each images}}
+    <div class="cover-item" style="background-image: url('.uploads/{{name}}')"></div>
+  {{/each}}
+          </div>
+    </div>
+</div>
   {{> customUpload}}
   {{/if}}
   
 </template>
 
 <template name="customUpload">
+	<h3>Upload Image</h3>
     {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
 </template>
 
