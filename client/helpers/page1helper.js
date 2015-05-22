@@ -1,6 +1,6 @@
 Template.Page1.helpers({
-	images: function() {
+    images: function () {
         var currentUserId = Meteor.userId();
-		return ImageList.find({userID:currentUserId});
-    }
-})
+        return ImageList.find({userID: currentUserId});
+    },
+});
