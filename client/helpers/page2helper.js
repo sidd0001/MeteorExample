@@ -1,13 +1,18 @@
+Meteor.subscribe("images");
 Template.Page2.helpers({
 	images: function() {
         var currentUserId = Meteor.userId();
-		return ImageList.find({userID:currentUserId});
+        if (Session.get("text")) {
+            return ImageList.find({userID: currentUserId , hashTag : Session.get("text") });
+        } else {
+            return ImageList.find({userID: currentUserId});
+        }
+
     }
 });
 Template.Page2.events({
     'click #search':function() {
         var $text = $('#textSearch').val();
-        var currentUserId = Meteor.userId();
-        images : ImageList.find({userID: currentUserId, name: $text});
+        Session.set('text' , $text);
     }
 })
