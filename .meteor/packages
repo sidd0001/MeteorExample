@@ -11,3 +11,5 @@ iron:router
 mizzao:bootstrap-3
 tomi:upload-server
 tomi:upload-jquery
+accounts-ui
+accounts-password

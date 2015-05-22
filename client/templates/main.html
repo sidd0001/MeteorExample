@@ -24,9 +24,18 @@
   {{> Navigation}}
 
   <h4><span class="label label-default">Page1</span></h4>
-  <h3>Images</h3>
-  {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
   
+  {{> loginButtons}}
+  
+  {{#if currentUser}}
+  <h3>Images</h3>
+  {{> customUpload}}
+  {{/if}}
+  
+</template>
+
+<template name="customUpload">
+    {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
 </template>
 
 <template name="Page2">

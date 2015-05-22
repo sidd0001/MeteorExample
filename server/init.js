@@ -1,6 +1,6 @@
 Meteor.publish('Images', function(){
     var currentUserId = this.userId;
-    return ImageList.find({createdBy: currentUserId})
+    return ImageList.find({userID:currentUserId});
 });
 
 Meteor.startup(function () {
