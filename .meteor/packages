@@ -13,3 +13,8 @@ tomi:upload-server
 tomi:upload-jquery
 accounts-ui
 accounts-password
+semantic:ui-form
+semantic:ui
+semantic:ui-menu
+semantic:ui-input
+semantic:ui-button
