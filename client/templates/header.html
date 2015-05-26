@@ -1,0 +1,30 @@
+
+
+<!-- Navigation (Header) template -->
+<template name="Navigation">
+    <div class="container">
+
+        <div class="ui massive pointing menu" >
+            <a class="item" href="/">
+                <i class="home icon"></i>Root
+            </a>
+
+          {{#unless page1}}
+              <a class="item" href="/page1">
+                  Page1
+              </a>
+          {{/unless}}
+          {{#unless page2}}
+              <a class="item" href="/page2">
+                  Page2
+              </a>
+          {{/unless}}
+            <div class="right menu">
+                <div class="item">
+                  {{> loginButtons}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<!--End navigation template-->
