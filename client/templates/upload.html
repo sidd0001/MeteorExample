@@ -1,0 +1,16 @@
+
+<!-- custom upload template -->
+<template name="customUpload">
+
+    <div class="col-md-offset-3 col-md-6">
+        <h3>Upload Image</h3>
+        <hr>
+        <h4>Image Name</h4>
+        <input id="ImgName" type="text" style="height: 40px; width: 100%" placeholder="Enter Image Name" >
+        <h4>Hash Tags</h4>
+        <input id="hashTags" type="text" style="height: 40px ; width: 100%" placeholder="Enter hash text" >
+        <h4>Images</h4>
+      {{> upload_bootstrap fileTypes='.jpg' multiple=true formData=specificFormData }}
+    </div>
+</template>
+<!--  End custom upload template -->
