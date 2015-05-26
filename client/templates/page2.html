@@ -1,0 +1,62 @@
+<!-- Page 2 template -->
+<template name="Page2">
+  {{> Navigation}}
+    <h4><span class="label label-default">Page2</span></h4>
+    <div class="container">
+      {{#if currentUser}}
+          <div class="ui action input">
+              <input id="textSearch" type="text" placeholder="Search by Tag" style="height: 46px;">
+              <button id="search" class="ui button">Search</button>
+          </div>
+          <hr>
+          <h3>Images</h3>
+          <div class="row-fluid">
+              <div class="col-lg-12 col-md-10 ">
+                  <div class="cover-container">
+                    {{#each images}}
+                        <div class="cover-item">
+                            Name : {{name}}<br>
+                            HashTag : {{#each hashTag}} {{this}} {{/each}}
+                            <br>
+                            <a href="/.uploads/{{imgName}}"><img src=".uploads/{{imgName}}" style="height: 110px"></a><br>
+                            <hr>
+                            <button class="ui button mini form-control btnSend" value="{{ _id}}">Send</button>
+                        </div>
+                    {{/each}}
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+
+          <h3>Received Images</h3>
+          <div class="row-fluid">
+              <div class="col-lg-12 col-md-10 ">
+                  <div class="cover-container">
+                      {{#each recivedImages}}
+                          <div class="cover-item">
+                              Name : {{name}}<br>
+                              HashTag : {{#each hashTag}} {{this}} {{/each}}
+                              <br>
+                              <a href="/.uploads/{{imgName}}"><img src=".uploads/{{imgName}}" class="reciveImg" value="{{_id}}" style="height: 110px"></a><br>
+                              <hr>
+                              <div class="form-control" value="{{ _id}}">Send by : {{sender}}</div>
+                          </div>
+                      {{/each}}
+                  </div>
+              </div>
+          </div>
+
+      {{/if}}
+    </div>
+
+  <!--Model popup the friend list-->
+    <div class="ui modal standard small">
+
+              {{>friendsList}}
+
+    </div>
+    <!-- End the user friend list  -->
+</template>
+
+<!-- End page2 template -->
