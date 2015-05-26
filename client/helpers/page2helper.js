@@ -29,8 +29,8 @@ Template.Page2.events({
     },
     'click .reciveImg': function(){
 
-        //ImageList.update( { _id : this._id }, { $set: { view : true } });
-            SendImageList.remove(this._id);
+        SendImageList.update( { _id : this._id }, { $set: { view : true } });
+            //SendImageList.remove(this._id);
 
     }
 
