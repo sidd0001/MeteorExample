@@ -3,4 +3,10 @@ Template.Page1.helpers({
         var currentUserId = Meteor.userId();
         return ImageList.find({userID: currentUserId});
     },
+    name: function () {
+        Uploader.finished = function (index, fileInfo, templateContext) {
+                name = fileInfo.name;
+        }
+        return name;
+    }
 });
