@@ -1,0 +1,17 @@
+<template name="friendsList">
+    <i class="close icon"></i>
+    <div class="header">
+        Friends List
+    </div>
+    <div class="content">
+        <div class="ui vertical">
+    {{#each friendList}}
+        <button class="ui button item friendsList" value="{{_id}}">
+          {{#each emails}}
+              <i class="user icon"></i>{{address}}
+          {{/each}}
+        </button>
+    {{/each}}
+        </div>
+    </div>
+</template>
