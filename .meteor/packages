@@ -18,3 +18,7 @@ semantic:ui
 semantic:ui-menu
 semantic:ui-input
 semantic:ui-button
+semantic:ui-modal
+semantic:ui-dimmer
+semantic:ui-transition
+semantic:ui-icon
